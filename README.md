@@ -1,6 +1,7 @@
 # COMP3753FinalProject
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.1.
+Thanks for reading
 
 To get more help on how to run this project, please see the included HowToRun.pdf
 
