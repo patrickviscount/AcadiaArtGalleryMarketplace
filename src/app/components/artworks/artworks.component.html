@@ -1,0 +1,23 @@
+<div class="row">
+    <ng-container *ngFor="let artwork of artworksData">
+        <div id="jumbospacing">
+            <div class="row jumbotron jumbotron-fluid bg-secondary" id="artworkjumbo">
+                <div class="col-auto">
+                    <div>
+                        <strong style="font-size: 16px;">{{artwork.title}}</strong>
+                        <p style="font-size: 14px;">{{artwork.fname}} {{artwork.lname}}</p>
+                    </div>
+                    <div class="item">
+                        <img src="{{'../../assets/' + artwork.image_url}}" alt="artwork" style="height: 350px; min-width: 375px; max-width: 375px; padding: 1px;" />
+                    </div>
+                    <div>
+                        <p style="font-size: 14px; padding:0px; margin:0px">Price: ${{artwork.price}}</p>
+                    </div>
+                    <div id="orderbtn" class="row">
+                        <button type="button" class="btn btn-dark btn-md" (click)="placeOrder(artwork.artwork_id)">Place an Order</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+</div>

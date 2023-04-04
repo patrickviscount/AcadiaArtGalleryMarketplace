@@ -1,0 +1,55 @@
+#message{
+    width:40%;
+    height: 100px;
+    text-align: left;
+    display: inline-block;
+}
+
+#orderjumbo{
+    width: 50%;
+    margin:auto;
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border: 2px solid #555
+}
+
+input, select, textarea{
+    color: black;
+}
+
+textarea:focus, input:focus {
+    color: black;
+}
+
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    background-color: #343a40;
+    border: solid .5px #545a6e;
+    border-radius: 2px;
+    display: inline-block;
+
+    text-decoration: none;
+}
+
+a.button:hover {
+    color: currentColor;
+}
+
+h1{
+    padding-bottom: 25px;
+}
+
+p{
+    padding-top: 10px;
+}
+
+#btn{
+    padding-top: 25px;
+}
+
+#jumbospace{
+    padding-bottom: 25px;
+}

@@ -1,0 +1,98 @@
+h1{
+    text-align: center;
+    padding: 10px;
+}
+
+#addjumbo{
+    width: 75%;
+    margin: auto;
+    text-align: center;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border: 2px solid #555;
+}
+
+#bottomspacing{
+    padding-top: 50px;
+}
+
+#topspacing{
+    padding-bottom: 50px;
+}
+
+#btn{
+    border: solid .5px #545a6e;
+    border-radius: 2px;
+    display: inline-block;
+    height: 40px;
+    height: 50px;
+}
+
+input{
+    border: solid .5px #545a6e;
+    border-radius: 2px;
+    display: inline-block;
+    height: 40px;
+    margin: 0 5px 0 2px;
+    width: 100%;
+    padding-left: 8px;
+    color: black;
+}
+
+#description{
+    height: 100px;
+    display: inline-block;
+}
+
+#delArtist{
+    color:black;
+    border: solid .5px #545a6e;
+    border-radius: 2px;
+    display: inline-block;
+    height: 40px;
+    margin: 0 5px 0 2px;
+    width: 100%;
+    padding-left: 8px;
+}
+
+#delArtwork{
+    color:black;
+    border: solid .5px #545a6e;
+    border-radius: 2px;
+    display: inline-block;
+    height: 40px;
+    margin: 0 5px 0 2px;
+    width: 100%;
+    padding-left: 8px;
+}
+
+#inputspace{
+    padding-bottom: 15px;
+}
+
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+    background-color: #343a40;
+    border: solid .5px #545a6e;
+    border-radius: 2px;
+    display: inline-block;
+
+    text-decoration: none;
+}
+
+a.button:hover {
+    color: currentColor;
+}
+
+#editArtist{
+    color:black;
+    border: solid .5px #545a6e;
+    border-radius: 2px;
+    display: inline-block;
+    height: 40px;
+    margin: 0 5px 0 2px;
+    width: 100%;
+    padding-left: 8px;
+}

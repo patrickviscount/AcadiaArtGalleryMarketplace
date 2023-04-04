@@ -1,0 +1,43 @@
+<div class="wrapper">
+    <!-- Sidebar  -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <h1> Artist Profile </h1>
+            <div class="line"></div>
+            <div class="">
+                <ul class="list-unstyled components">
+                    <li>
+                        <h2>{{currentArtist?.fname}} {{currentArtist?.lname}}</h2>
+                    </li>
+                    <li>
+                        <p>Nationality: {{currentArtist?.nationality}}</p>
+                    </li>
+                    <li>
+                        <p>Art Medium: {{currentArtist?.preferred_artistic_medium}}</p>
+                    </li>
+                    <li>
+                        <p>Date of Birth: {{currentArtist?.date_of_birth}}</p>
+                    </li>
+                    <li>
+                        <p>Date of Death: {{currentArtist?.date_of_death}}</p>
+                    </li>
+                    <li>
+                        <p>Email: {{currentArtist?.email}}</p>
+                    </li>
+                    <div id="spacing"></div>
+                    <h2>Biography</h2>
+                    <li>
+                        <p>{{currentArtist?.description}}</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Content  -->
+    <div id="content">
+        <h1> {{currentArtist?.fname}} {{currentArtist?.lname}} Artwork <br></h1>
+        <div class="line"></div>
+        <app-artworks *ngIf="currentArtist" [artistId]="currentArtist.artist_id" />
+    </div>
+</div>

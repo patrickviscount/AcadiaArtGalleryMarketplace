@@ -1,0 +1,18 @@
+<div id="jumbospace">
+    <div id="orderjumbo" class="jumbotron jumbotron-fluid bg-secondary">
+        <h1 style="font-size: 30px;" class="text-light">Order Form</h1>
+        <h2 style="font-size: 24px;" class="text-light">{{artworkData?.title}}</h2>
+        <p>{{artworkData?.fname}} {{artworkData?.lname}}</p>
+        <div>
+            <img src="{{'../../assets/' + artworkData?.image_url}}" alt="artwork" style="height: 350px; min-width: 375px; max-width: 375px; padding: 1px;" />
+        </div>
+        <div>
+            <p style="font-size: 18px;">${{artworkData?.price}}</p>
+        </div>
+        <div id="btn">
+            <a class="button btn-secondary btn-lg" href="mailto:{{artworkData?.email}}?subject={{artworkData?.title}} Order
+            &body=Hello, {{artworkData?.fname}}!%0D%0A 
+                I am interested in purchasing your work '{{artworkData?.title}}' which is listed on the COMP3753 Art Gallery for a price of ${{artworkData?.price}}. I look forward to hearing from you in regards to this purchase, thank you.">Place Email Order</a>
+        </div>
+    </div>
+</div>

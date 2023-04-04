@@ -1,0 +1,23 @@
+<div id="logjumbo" class="jumbotron jumbotron-fluid bg-secondary">
+    <h1>Login</h1>
+    <div style="width: 400px; margin: auto;">
+        <div class="submit-form">
+            <div *ngIf="!checkSubmitted">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input class="form-control" id="username" required [(ngModel)]="username" name="username" />
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" required [(ngModel)]="password" name="password" />
+                </div>
+                <button (click)="login()" class="btn btn-dark btn-lg" id="btn">Submit</button>
+            </div>
+
+            <div *ngIf="checkSubmitted">
+                <h4>Login Success!</h4>
+            </div>
+        </div>
+    </div>
+</div>

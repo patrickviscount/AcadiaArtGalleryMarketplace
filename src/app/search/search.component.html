@@ -1,0 +1,73 @@
+<div id="page">
+    <div id="topspace"></div>
+    <div id="searchjumbo" class="jumbotron jumbotron-fluid bg-secondary">
+        <h1 class="text-light">Search for Artists</h1>
+        <div class="container">
+            <div class="row">
+                <div class="col-6">
+                    <div id="inputtext">
+                        <label class="text-light" for="fnameSearch">First Name </label>
+                    </div>
+                    <div id="inputspace">
+                        <input id="fname" placeholder="Ex: Vincent">
+                    </div>
+                    <div id="inputtext">
+                        <label class="text-light" for="lnameSearch">Last Name </label>
+                    </div>
+                    <div id="inputspace">
+                        <input id="lname" placeholder="Ex: Van Gogh">
+                    </div>
+                </div>
+                <div class="col-6">
+                    <div id="inputtext">
+                        <label class="text-light" for="mediumSearch">Art Medium </label>
+                    </div>
+                    <div id="inputspace">
+                        <select id="medium" name="Mediums">
+                            <option>Any</option>
+                            <ng-container *ngFor="let artist of artistsData">
+                                <option>{{artist.preferred_artistic_medium}}</option>
+                            </ng-container>
+                        </select>
+                    </div>
+                    <div id="inputtext">
+                        <label class="text-light" for="nationSearch">Nationality </label>
+                    </div>
+                    <div id="inputspace">
+                        <select id="nation" name="Nations">
+                            <option>Any</option>
+                            <ng-container *ngFor="let artist of artistsData">
+                                <option>{{artist.nationality}}</option>
+                            </ng-container>
+                        </select>
+                    </div>
+                    
+                </div>
+            </div>
+            <div id="btn">
+                <button class="btn btn-dark btn-lg" id="searchButton" (click)="onClickMe()">Search</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="accordion">
+        <ng-container *ngFor="let artist of artistsFilteredData">
+            <mat-accordion>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            {{artist.fname}} {{artist.lname}}
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                        <p> Email: {{artist.email}}</p>
+                        <p> Description: {{artist.description}}</p>
+                        <p> Date of Birth: {{artist.date_of_birth}}</p>
+                        <p> Date of Death: {{artist.date_of_death}}</p>
+                        <p> Nationality: {{artist.nationality}}</p>
+                        <p> Art Medium: {{artist.preferred_artistic_medium}}</p>
+                        <a class="btn btn-secondary" href="{{'/artist/' + artist.artist_id}}"> See Profile </a>
+                </mat-expansion-panel>
+            </mat-accordion>
+        </ng-container>
+    </div>
+</div>

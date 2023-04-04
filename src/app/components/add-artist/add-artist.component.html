@@ -1,0 +1,185 @@
+<div id="topspacing"></div>
+<div class="row">
+    <div class="col-6">
+        <div id="addjumbo" class="jumbotron jumbotron-fluid bg-secondary">
+            <h1> Add New Artist</h1>
+            <div style="width: 400px; margin: auto;">
+                <div class="submit-form">
+                    <div *ngIf="!artistSubmitted">
+                        <div class="form-group">
+                            <label for="fname">First Name:</label>
+                            <input class="form-control" id="fname" required [(ngModel)]="fname" name="fname" />
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="lname">Last Name:</label>
+                            <input class="form-control" id="lname" required [(ngModel)]="lname" name="lname" />
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input class="form-control" id="email" required [(ngModel)]="email" name="email" />
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="date_of_birth">Date of Birth:</label>
+                            <input id="date" class="form-control" type="date" id="date_of_birth"  [(ngModel)]="date_of_birth"
+                                name="date_of_birth" />
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="date_of_death">Date of Death:</label>
+                            <input id="date" class="form-control" type="date" id="date_of_death" required [(ngModel)]="date_of_death"
+                                name="date_of_death" />
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="nationality">Nationality:</label>
+                            <input class="form-control" id="nationality" required [(ngModel)]="nationality" name="nationality" />
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="art_medium">Art Medium:</label>
+                            <input class="form-control" id="art_medium" required [(ngModel)]="preferred_artistic_medium" name="art_medium" />
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="art_medium">Artist Description:</label>
+                            <textarea class="form-control" id="description" required [(ngModel)]="description" name="description" rows="5" cols="33">
+                            </textarea>
+                        </div>
+            
+            
+                        <button (click)="saveArtistCheck()" class="btn btn-dark btn-lg" id="btn">Submit</button>
+                    </div>
+            
+                    <div *ngIf="artistSubmitted">
+                        <h4>You submitted successfully!</h4>
+                        <button class="btn btn-dark btn-lg" (click)="newArtist()">Add</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="addjumbo" class="jumbotron jumbotron-fluid bg-secondary">
+            <h1>Edit Existing Artist</h1>
+            <div style="width: 400px; margin: auto;">
+                <div class="submit-form">
+                    <div id="inputtext">
+                        <label class="text-light" for="mediumSearch">Artist to Edit </label>
+                    </div>
+                    <div class="editSelect">
+                        <select id="editArtist" name="Artists" (change)="onChange($event)">
+                            <option>Please Choose</option>
+                            <ng-container *ngFor="let artist of artistsData">
+                                <option value="{{artist.artist_id}}">{{artist.artist_id}}: {{artist.fname}} {{artist.lname}}</option>
+                            </ng-container>
+                        </select>
+                    </div>
+                        <div class="form-group">
+                            <label for="fname">First Name:</label>
+                            <input class="form-control" id="fname" required [(ngModel)]="editFName" name="fname" />
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="lname">Last Name:</label>
+                            <input class="form-control" id="lname" required [(ngModel)]="editLName" name="lname" />
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="email">Email:</label>
+                            <input class="form-control" id="email" required [(ngModel)]="editEmail" name="email" />
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="date_of_birth">Date of Birth:</label>
+                            <input id="date" class="form-control" type="date" id="editDate_of_birth"  [(ngModel)]="date_of_birth"
+                                name="date_of_birth" />
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="date_of_death">Date of Death:</label>
+                            <input id="date" class="form-control" type="date" id="editDate_of_death" required [(ngModel)]="date_of_death"
+                                name="date_of_death" />
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="nationality">Nationality:</label>
+                            <input class="form-control" id="nationality" required [(ngModel)]="editNationality" name="nationality" />
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="art_medium">Art Medium:</label>
+                            <input class="form-control" id="art_medium" required [(ngModel)]="editPreferred_artistic_medium" name="art_medium" />
+                        </div>
+            
+                        <div class="form-group">
+                            <label for="art_medium">Artist Description:</label>
+                            <textarea class="form-control" id="description" required [(ngModel)]="editDescription" name="description" rows="5" cols="33">
+                            </textarea>
+                        </div>
+                        <button (click)="editArtistCheck()" class="btn btn-dark btn-lg" id="btn">Submit</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-6">
+        <div id="addjumbo" class="jumbotron jumbotron-fluid bg-secondary">
+            <h1>Delete Artist Entry</h1>
+            <div style="width: 400px; margin: auto;">
+                <div id="inputtext">
+                    <label class="text-light" for="mediumSearch">Artist </label>
+                </div>
+                <div id="inputspace">
+                    <select id="delArtist" name="Artists">
+                        <option>Please Choose</option>
+                        <ng-container *ngFor="let artist of artistsData">
+                            <option>{{artist.artist_id}}: {{artist.fname}} {{artist.lname}}</option>
+                        </ng-container>
+                    </select>
+                </div>
+                <button class="btn btn-dark btn-lg" (click)="delArtist()">Delete</button>
+            </div>
+        </div>
+        <div id="addjumbo" class="jumbotron jumbotron-fluid bg-secondary">
+            <h1>Delete Artwork Entry</h1>
+            <div style="width: 400px; margin: auto;">
+                <div id="inputtext">
+                    <label class="text-light" for="mediumSearch">Artwork </label>
+                </div>
+                <div id="inputspace">
+                    <select id="delArtwork" name="Artists">
+                        <option>Please Choose</option>
+                        <ng-container *ngFor="let artwork of artworksData">
+                            <option>{{artwork.artwork_id}}: {{artwork.title}}</option>
+                        </ng-container>
+                    </select>
+                </div>
+                <button class="btn btn-dark btn-lg" (click)="delArtwork()">Delete</button>
+            </div>
+        </div>
+        <div id="addjumbo" class="jumbotron jumbotron-fluid bg-secondary">
+            <h1>Submit Artwork</h1>
+            <h3>Artwork Submissions will be inspected by the curation team to assess eligibility</h3>
+            <h4>Please attach any artwork files to the email</h4>
+            <div style="width: 400px; margin: auto;">
+                <div id="inputtext">
+                    <label class="text-light">Artwork Title</label>
+                </div>
+                <div id="inputspace">
+                    <input id="artTitle" placeholder="Ex: Starry Night">
+                </div>
+                <div id="inputtext">
+                    <label class="text-light">Artwork Price </label>
+                </div>
+                <div id="inputspace">
+                    <input type="number" id="artPrice" placeholder="Ex: Just a number such as 1000">
+                </div>
+                <a (click)="mailto()" class="button btn-secondary btn-lg" > Make a Request </a>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<div id="bottomspacing"></div>
+
